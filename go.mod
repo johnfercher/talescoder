@@ -1,4 +1,4 @@
-module talescoder/m/v2
+module talescoder
 
 go 1.20
 

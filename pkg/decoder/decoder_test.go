@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"talescoder/m/v2/internal/bytecompressor"
-	"talescoder/m/v2/mocks"
+	"talescoder/internal/bytecompressor"
+	"talescoder/mocks"
 	"testing"
 )
 

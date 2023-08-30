@@ -1,6 +1,6 @@
 package mocks
 
-import "talescoder/m/v2/pkg/models"
+import "talescoder/pkg/models"
 
 func CreateTaleSpireSlab() *models.Slab {
 	return &models.Slab{

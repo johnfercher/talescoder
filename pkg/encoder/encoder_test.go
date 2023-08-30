@@ -3,8 +3,8 @@ package encoder
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
-	"talescoder/m/v2/internal/bytecompressor"
-	"talescoder/m/v2/mocks"
+	"talescoder/internal/bytecompressor"
+	"talescoder/mocks"
 	"testing"
 )
 
