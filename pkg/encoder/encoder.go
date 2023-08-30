@@ -1,10 +1,10 @@
 package encoder
 
 import (
-	"talescoder/internal/axisadapter"
-	"talescoder/internal/bytecompressor"
-	"talescoder/internal/byteparser"
-	"talescoder/pkg/models"
+	"talescoder/m/v2/internal/axisadapter"
+	"talescoder/m/v2/internal/bytecompressor"
+	"talescoder/m/v2/internal/byteparser"
+	"talescoder/m/v2/pkg/models"
 )
 
 type Encoder interface {

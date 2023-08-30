@@ -2,14 +2,14 @@ package decoder
 
 import (
 	"bufio"
-	"talescoder/internal/axisadapter"
-	"talescoder/internal/bytecompressor"
-	"talescoder/internal/byteparser"
-	models2 "talescoder/pkg/models"
+	"talescoder/m/v2/internal/axisadapter"
+	"talescoder/m/v2/internal/bytecompressor"
+	"talescoder/m/v2/internal/byteparser"
+	"talescoder/m/v2/pkg/models"
 )
 
 type Decoder interface {
-	Decode(slabBase64 string) (*models2.Slab, error)
+	Decode(slabBase64 string) (*models.Slab, error)
 }
 
 type decoder struct {
@@ -22,8 +22,8 @@ func NewDecoder(byteCompressor bytecompressor.ByteCompressor) Decoder {
 	}
 }
 
-func (self *decoder) Decode(slabBase64 string) (*models2.Slab, error) {
-	slab := &models2.Slab{}
+func (self *decoder) Decode(slabBase64 string) (*models.Slab, error) {
+	slab := &models.Slab{}
 
 	reader, err := self.slabCompressor.BufferFromBase64(slabBase64)
 	if err != nil {
@@ -83,7 +83,7 @@ func (self *decoder) Decode(slabBase64 string) (*models2.Slab, error) {
 	return slab, nil
 }
 
-func (self *decoder) decodeBounds(reader *bufio.Reader) (*models2.Layout, error) {
+func (self *decoder) decodeBounds(reader *bufio.Reader) (*models.Layout, error) {
 	centerX, err := byteparser.BufferToUint16(reader)
 	if err != nil {
 		return nil, err
@@ -104,8 +104,8 @@ func (self *decoder) decodeBounds(reader *bufio.Reader) (*models2.Layout, error)
 		return nil, err
 	}
 
-	return &models2.Layout{
-		Coordinates: &models2.Vector3d{
+	return &models.Layout{
+		Coordinates: &models.Vector3d{
 			X: axisadapter.DecodeX(centerX),
 			Y: axisadapter.DecodeY(centerY),
 			Z: axisadapter.DecodeZ(centerZ),
@@ -114,8 +114,8 @@ func (self *decoder) decodeBounds(reader *bufio.Reader) (*models2.Layout, error)
 	}, nil
 }
 
-func (self *decoder) decodeAsset(reader *bufio.Reader) (*models2.Asset, error) {
-	asset := &models2.Asset{}
+func (self *decoder) decodeAsset(reader *bufio.Reader) (*models.Asset, error) {
+	asset := &models.Asset{}
 
 	// Id
 	idBytes, err := byteparser.BufferToBytes(reader, 18)

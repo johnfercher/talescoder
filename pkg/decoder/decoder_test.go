@@ -3,11 +3,10 @@ package decoder
 import (
 	"errors"
 	"fmt"
-	"github.com/johnfercher/taleslab/mocks"
-	"github.com/johnfercher/taleslab/pkg/taleslab/taleslabdomain/taleslabconsts"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"talescoder/internal/bytecompressor"
+	"talescoder/m/v2/internal/bytecompressor"
+	"talescoder/m/v2/mocks"
 	"testing"
 )
 
@@ -55,7 +54,7 @@ func TestDecoder_Decode_IntegrationHappy(t *testing.T) {
 	// Assert
 	assert.Nil(t, err)
 	assert.NotNil(t, slab)
-	assert.Equal(t, taleslabconsts.MagicBytes, slab.MagicBytes)
+	assert.Equal(t, consts.MagicBytes, slab.MagicBytes)
 	assert.Equal(t, int16(2), slab.Version)
 	assert.Equal(t, int16(1), slab.AssetsCount)
 	assert.Equal(t, slab.AssetsCount, int16(len(slab.Assets)))

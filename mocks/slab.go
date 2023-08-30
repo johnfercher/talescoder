@@ -1,23 +1,19 @@
 package mocks
 
-import (
-	"github.com/johnfercher/taleslab/pkg/taleslab/taleslabdomain/taleslabconsts"
-	"github.com/johnfercher/taleslab/pkg/taleslab/taleslabdomain/taleslabentities"
-	models2 "talescoder/pkg/models"
-)
+import "talescoder/m/v2/pkg/models"
 
-func CreateTaleSpireSlab() *models2.Slab {
-	return &models2.Slab{
-		MagicBytes:  taleslabconsts.MagicBytes,
+func CreateTaleSpireSlab() *models.Slab {
+	return &models.Slab{
+		MagicBytes:  models.MagicBytes,
 		Version:     2,
 		AssetsCount: 1,
-		Assets: []*models2.Asset{
+		Assets: []*models.Asset{
 			{
 				Id:           []byte{0x0, 0x0, 0x2c, 0x3e, 0x77, 0x5d, 0x2f, 0xca, 0x44, 0x4c, 0x88, 0xd0, 0xf9, 0xb4, 0xa7, 0xaf, 0xaf, 0x5a},
 				LayoutsCount: 1,
-				Layouts: []*models2.Layout{
+				Layouts: []*models.Layout{
 					{
-						Coordinates: &models2.Vector3d{
+						Coordinates: &models.Vector3d{
 							X: 0,
 							Y: 0,
 							Z: 0,
@@ -32,22 +28,4 @@ func CreateTaleSpireSlab() *models2.Slab {
 
 func CreateBase64Slab() string {
 	return "H4sIAAAAAAAE/wAoANf/zvrO0QIAAQAAACw+d10vykRMiND5tKevr1oBAAAAAAAAAAAAAAAAAAEAAP//7YI+iCgAAAA="
-}
-
-func CreateAssets() taleslabentities.Assets {
-	assets := taleslabentities.Assets{}
-
-	asset := &taleslabentities.Asset{
-		Id: []byte{0x0, 0x0, 0x2c, 0x3e, 0x77, 0x5d, 0x2f, 0xca, 0x44, 0x4c, 0x88, 0xd0, 0xf9, 0xb4, 0xa7, 0xaf, 0xaf, 0x5a},
-		Coordinates: &taleslabentities.Vector3d{
-			X: 0,
-			Y: 0,
-			Z: 0,
-		},
-		Rotation: 0,
-	}
-
-	assets = append(assets, asset)
-
-	return assets
 }
