@@ -15,9 +15,9 @@ type encoder struct {
 	slabCompressor bytecompressor.ByteCompressor
 }
 
-func NewEncoder(byteCompressor bytecompressor.ByteCompressor) Encoder {
+func NewEncoder() Encoder {
 	return &encoder{
-		slabCompressor: byteCompressor,
+		slabCompressor: bytecompressor.New(),
 	}
 }
 
