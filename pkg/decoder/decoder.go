@@ -2,10 +2,10 @@ package decoder
 
 import (
 	"bufio"
-	"talescoder/internal/axisadapter"
-	"talescoder/internal/bytecompressor"
-	"talescoder/internal/byteparser"
-	"talescoder/pkg/models"
+	"github.com/johnfercher/talescoder/internal/axisadapter"
+	"github.com/johnfercher/talescoder/internal/bytecompressor"
+	"github.com/johnfercher/talescoder/internal/byteparser"
+	"github.com/johnfercher/talescoder/pkg/models"
 )
 
 type Decoder interface {

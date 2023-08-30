@@ -1,4 +1,4 @@
-module talescoder
+module github.com/johnfercher/talescoder
 
 go 1.20
 

@@ -2,9 +2,9 @@ package encoder
 
 import (
 	"fmt"
+	"github.com/johnfercher/talescoder/internal/bytecompressor"
+	"github.com/johnfercher/talescoder/mocks"
 	"github.com/stretchr/testify/assert"
-	"talescoder/internal/bytecompressor"
-	"talescoder/mocks"
 	"testing"
 )
 
