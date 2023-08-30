@@ -1,2 +1,3 @@
-# talescoder
-TaleSpire Encoder &amp; Decoder
+# TalesCoder
+
+TaleSpire Encoder & Decoder
