@@ -1,6 +1,6 @@
 module github.com/johnfercher/talescoder
 
-go 1.20
+go 1.21.0
 
 require github.com/stretchr/testify v1.8.4
 
